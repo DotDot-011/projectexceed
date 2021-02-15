@@ -3,15 +3,39 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Kanit', sans-serif;
+}
+section{
+    position: relative;
+    top: 100px;
+    width: 55%;
+    height: 1000px;
+    float: left;
+    background-color: yellow;
+}
+
+aside{
+    position: relative;
+    top: 100px;
+    width: 45%;
+    height: 1000px;
+    float: left;
+    background-color: rgb(205, 205, 247);
+    text-align: center;
+}
+.clearfix{
+    clear:both;
+}
 .room{
-    max-width: 1350px;
-    max-height: 800px;
+    max-width: 1920px;
+    max-height: 1080px;
 }
 
 .room1{
     margin: 0 auto;
     position: relative;
-    right: 13%;
+    
 }
 
 #room1_used{
@@ -49,8 +73,15 @@
     background-color: gray;
     color: white;
     border: 1px  black;
+    display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     border-radius: 50px
+}
+
+#input{
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
 }
