@@ -1,9 +1,40 @@
 #room1_used{
-    width: 7rem;
-    height: 13rem;
+    width: 13rem;
+    height: 7rem;
+    left: 5%;
     background-color: hsl(101, 61%, 50%);
+    color: white;
     border: 1px  black;
     margin: 0rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px
+}
+
+#room1_responsible{
+    width: 13rem;
+    height: 2rem;
+    left: 5%;
+    background-color: hsl(105, 7%, 22%);
+    color: white;
+    border: 1px  black;
+    margin: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px
+}
+
+#room_number{
+    width: 8rem;
+    height: 2rem;
+    position: relative;
+    left: 5%;
+    background-color: gray;
+    color: white;
+    border: 1px  black;
+    margin: 1rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
