@@ -27,8 +27,13 @@ function get_room_detail() {
     });
 }
 
-setInterval(() => {
-    // get_room_detail()
+function update_roomstatus()
+{
+    
+}
 
-},1000)
+setInterval(() => {
+    // get_room_detail();
+    update_roomstatus();
+},1000);
 
