@@ -2,7 +2,7 @@ var all_room = ['room1'];
 
 var room_status = {
     room1: {
-        name: 'room1',
+        name: 'Room 1',
         status: 'True',
         total_num: '0',
         responsible: 'None',
@@ -58,7 +58,6 @@ function update_roomstatus()
         {
             desti.style.backgroundColor = 'red';
         }
-
         var room_responsible = room+'_responsible';
         desti = document.getElementById(room_responsible);
         desti.innerText = room_status[room]['responsible'];
