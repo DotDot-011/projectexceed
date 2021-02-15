@@ -57,7 +57,7 @@ footer{
     width: 260px;
     height: 240px;
     margin-top: 65px;
-    background:linear-gradient(to bottom left, #13f513, #f9d423);;
+    background:linear-gradient(to bottom left, #13f513, #f9d423);
     
     color: white;
     font-size: 68px;
@@ -70,12 +70,17 @@ footer{
     box-shadow: 15px 0px 10px 10px rgba(0, 0,0, 0.5);
 
 }
-
+#room1_used:hover{
+    
+    box-shadow: 30px 0px 20px 20px rgba(0, 0,0, 0.5);
+    animation: rotate 5s linear infinite;
+}
 
 #room1_responsible{
 
     width: 260px;
     height: 50px;
+    top:20px;
     margin-top: 50px;
     background-color: rgb(44, 44, 44);
     box-shadow: 9px -5px 5px 3px rgb(0 0 0 / 50%);
@@ -100,8 +105,8 @@ footer{
 .outer-circle {
     margin: 0 auto;
     position: relative;
-    height: 125px;
-    width: 125px;
+    height: 144px;
+    width: 143.5px;
     background: linear-gradient(60deg ,#ff1414, #fffb21);
     border-radius: 50%;
     animation: rotate 2.0s linear infinite;
@@ -109,8 +114,8 @@ footer{
 .outer-circle span {
     margin: 0 auto;
     position: absolute;
-    height: 125px;
-    width: 125px;
+    height: 145px;
+    width: 145px;
     right: 0px;
     bottom: 2.1px;
     background: linear-gradient(60deg, #ff1414, #eeff07);
@@ -120,8 +125,8 @@ footer{
 #room1_number{
     position: relative;
     top: 5.9px;
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
     margin-top: 50px;
     background-color: hsl(0, 0%, 13%);
     color: white;
@@ -168,7 +173,7 @@ span:nth-child(4) {
     position: relative;
     top: 100px;
     right: 20%;
-    font-size: 22px;
+    font-size: 27px;
     color: rgb(255, 255, 255);
 }
 
@@ -193,10 +198,10 @@ span:nth-child(4) {
 }
 
 .sendbox{
-    width: 35px;
+    width: 50px;
     background-color: rgb(235, 94, 13);
     border:2px white;
-    font-size: 17px;
+    font-size: 21px;
     border-radius: 3px;
     color: white;
 }
