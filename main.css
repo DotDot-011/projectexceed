@@ -173,7 +173,7 @@ span:nth-child(4) {
     position: relative;
     top: 100px;
     right: 10%;
-    font-size: 27px;
+    font-size: 24px;
     color: rgb(255, 255, 255);
 }
 
@@ -198,11 +198,12 @@ span:nth-child(4) {
 }
 
 .sendbox{
-    width: 50px;
+    width: 71px;
+    height: 30px;
     background-color: rgb(235, 94, 13);
     box-shadow: 0px 0px 2px 3px rgb(0 0 0 / 50%);
     border:2px white;
-    font-size: 21px;
+    font-size: 19px;
     border-radius: 3px;
     color: white;
 
@@ -217,17 +218,17 @@ span:nth-child(4) {
 .chartback{
     position: relative;
     margin: 0 auto;
-    width: 600px;
-    height: 500px;
-    top: 378px;
+    width: 500px;
+    height: 400px;
+    top: 324px;
     right: 10%;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    border-radius: 2% 32% ;
+    border-radius: 2% 32%;
     background: linear-gradient(to bottom left, #ff8737, #f9d423);
-    box-shadow: 10px 11px 10px 4px rgb(0 0 0 / 100%);
+    box-shadow: 10px 11px 10px 4px rgb(0 0 0);
     animation: rotate 7s linear infinite;
     
 }
@@ -239,8 +240,8 @@ span:nth-child(4) {
 }
 .chart{
     margin: 0 auto;
-    width: 500px;
-    height: 400px;
+    width: 400px;
+    height: 300px;
     /* left:41px;
     top:50px; */
 }
