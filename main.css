@@ -225,7 +225,7 @@ span:nth-child(4) {
     text-align: center;
     justify-content: center;
     align-items: center;
-    border-radius: 50% 10% ;
+    border-radius: 6% 25% ;
     background: linear-gradient(to bottom left, #ff8737, #f9d423);
     box-shadow: 7px 8px 7px 1px rgb(0 0 0 / 50%);
     animation: rotate 7s linear infinite;
