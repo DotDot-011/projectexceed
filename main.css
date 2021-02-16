@@ -238,7 +238,7 @@ span:nth-child(4) {
     position: relative;
     bottom: 2px;
     background-color: rgb(235, 94, 13);
-    box-shadow: 0 9px rgb(7, 7, 7);
+    box-shadow: 0 9px rgb(0, 0, 0);
     border:2px white;
     font-size: 19px;
     border-radius: 3px;
