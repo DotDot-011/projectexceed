@@ -220,7 +220,16 @@ span:nth-child(4) {
     position: relative;
     width: 500px;
     height: 400px;
-    top: 300px;
+    top: 378px;
     right: 20%;
+    
+    background: linear-gradient(to bottom left, #ff8737, #f9d423);
     box-shadow: 7px 8px 7px 1px rgb(0 0 0 / 50%);
+    animation: rotate 7s linear infinite;
+    color: rgb(158, 141, 173);
+}
+
+.chart:hover{
+    box-shadow: 10px 11px 10px 4px rgb(0 0 0 / 100%);
+    
 }

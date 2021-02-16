@@ -17,13 +17,13 @@ var room_status = {
 
 var data_graph = {
     room1: [
-        {x : 9, y: 0},
-        {x : 11, y: 0},
-        {x : 13, y: 0},
-        {x : 15, y: 0},
-        {x : 17, y: 0},
-        {x : 19, y: 0},
-        {x : 21, y: 0},
+        {x : 9, y: 5},
+        {x : 11, y: 3},
+        {x : 13, y: 4},
+        {x : 15, y: 3},
+        {x : 17, y: 6},
+        {x : 19, y: 5},
+        {x : 21, y: 2},
     ],
 }
 
@@ -125,23 +125,37 @@ function update_roomstatus()
     })
 }
 
+
+
 function create_graph(room){
     chart[room] = new CanvasJS.Chart(room+'_chart', {
+        backgroundColor:"transparent",
         animationEnabled: true,
-        theme: "light2",
+        animationDuration:1000,
         title:{
-            text: "average cleaning"
+            text: "Average Cleaning",
+            fontSize: 25,
+            fontColor: "Crimson",
         },
         axisX: {
             title: "Time",
+            titleFontColor:"#8B0000",
+            labelFontColor:"Crimson", 
         },
         axisY: {
             title: "cleaning round",
+            titleFontColor:"#8B0000" ,
+            labelFontColor:"Crimson",
         },
-        data: [{        
-            type: "line",
+        data: [{    
+            type:"spline",
+            lineThickness: 5,
+            color:"Crimson",
+            markerColor: "purple",
+            fillOpacity: .3, 
             indexLabelFontSize: 16,
-            dataPoints: data_graph[room]
+            dataPoints: data_graph[room],
+        
         }]
     });
     chart[room].render();
