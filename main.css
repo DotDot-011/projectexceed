@@ -227,19 +227,18 @@ span:nth-child(4) {
     align-items: center;
     border-radius: 6% 25% ;
     background: linear-gradient(to bottom left, #ff8737, #f9d423);
-    box-shadow: 7px 8px 7px 1px rgb(0 0 0 / 50%);
+    box-shadow: 10px 11px 10px 4px rgb(0 0 0 / 100%);
     animation: rotate 7s linear infinite;
     
 }
 
 
 .chartback:hover{
-    box-shadow: 10px 11px 10px 4px rgb(0 0 0 / 100%);
+    box-shadow:20px 20px 9px 5px rgb(0 0 0)
     
 }
 .chart{
     margin: 0 auto;
-    
     width: 500px;
     height: 400px;
     /* left:41px;
