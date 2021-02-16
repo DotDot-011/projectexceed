@@ -172,7 +172,7 @@ span:nth-child(4) {
     margin: 0 auto;
     position: relative;
     top: 100px;
-    right: 20%;
+    right: 10%;
     font-size: 27px;
     color: rgb(255, 255, 255);
 }
@@ -220,12 +220,12 @@ span:nth-child(4) {
     width: 600px;
     height: 500px;
     top: 378px;
-    right: 20%;
+    right: 10%;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    border-radius: 6% 25% ;
+    border-radius: 2% 32% ;
     background: linear-gradient(to bottom left, #ff8737, #f9d423);
     box-shadow: 10px 11px 10px 4px rgb(0 0 0 / 100%);
     animation: rotate 7s linear infinite;
