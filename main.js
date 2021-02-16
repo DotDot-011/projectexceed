@@ -15,6 +15,49 @@ var room_status = {
     }
 };
 
+var data_graph = {
+    room1: [
+        {x : 9, y: 0},
+        {x : 11, y: 0},
+        {x : 13, y: 0},
+        {x : 15, y: 0},
+        {x : 17, y: 0},
+        {x : 19, y: 0},
+        {x : 21, y: 0},
+    ],
+}
+
+var temp = {
+    room1: {
+        time_9 : 9,
+        time_11 : 10,
+        time_13 : 13,
+        time_15 : 15,
+        time_17 : 17,
+        time_19 : 19,
+        time_21 : 20,
+    }
+};
+
+var chart = {
+    room1 : "",
+};
+
+function easy_up(x)
+{
+    Object.keys(temp).forEach((room) => {
+        // console.log(temp[room]);
+        var i = 0;
+        Object.keys(temp[room]).forEach((time) => {
+            data_graph[room][i]['y'] = temp[room][time]+x;
+            // console.log(time);
+            i+=1;
+        });
+    });
+}
+
+
+
 function get_room_detail() {
     fetch("https://exceed1.cpsk-club.xyz", {
         method: "GET",
@@ -27,6 +70,24 @@ function get_room_detail() {
             {
                 room_status[data][detail] = datas[data][detail];
             });
+        });
+    });
+}
+
+function get_room_graph() {
+    fetch("https://exceed1.cpsk-club.xyz", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+
+    }).then((response) => response.json())
+    .then((datas) => {
+        Object.keys(datas).forEach((room) => {
+            data_graph[room] = [];
+            var i = 0;
+            Object.keys(datas[room]).forEach((time) =>{
+                data_graph[room][i]['y'] = datas[room][time];
+                i+=1;
+            })
         });
     });
 }
@@ -64,6 +125,28 @@ function update_roomstatus()
     })
 }
 
+function create_graph(room){
+    chart[room] = new CanvasJS.Chart(room+'_chart', {
+        animationEnabled: true,
+        theme: "light2",
+        title:{
+            text: "average cleaning"
+        },
+        axisX: {
+            title: "Time",
+        },
+        axisY: {
+            title: "cleaning round",
+        },
+        data: [{        
+            type: "line",
+            indexLabelFontSize: 16,
+            dataPoints: data_graph[room]
+        }]
+    });
+    chart[room].render();
+}
+
 
 const form = document.getElementById('input');
 form.addEventListener("submit", (event) => {
@@ -73,9 +156,26 @@ form.addEventListener("submit", (event) => {
         // give_input(x);
 });
 
+console.log(data_graph);
+
+all_room.forEach((room) => {
+     create_graph(room);
+});
+
 setInterval(() => {
     // get_room_detail();
     // give_input();
+    // get_room_graph();
+    // all_room.forEach((room) => {
+    //     create_graph(room);
+    // });
+    all_room.forEach((room) => {
+        for(var j = 0;j< 7;j++)
+        {
+            chart[room].options.data[0].dataPoints[j].y = data_graph[room][j]['y'];
+        }
+        chart[room].render();
+    });
     update_roomstatus();
 },1000);
 
