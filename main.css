@@ -270,7 +270,7 @@ span:nth-child(4) {
     align-items: center;
     border-radius: 2% 32%;
     background: linear-gradient(to bottom left, #ff8737, #f9d423);
-    box-shadow: 10px 11px 10px 4px rgb(0, 0, 0);
+    box-shadow: 11px 9px 14px 1px rgb(0 0 0);
     animation: rotate 30s linear infinite;
     
     
@@ -278,7 +278,7 @@ span:nth-child(4) {
 
 
 .chartback:hover{
-    box-shadow:20px 20px 9px 5px rgb(0 0 0);
+    
     transform: translateY(-10px);
     
 }
