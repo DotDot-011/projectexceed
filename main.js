@@ -140,12 +140,16 @@ function create_graph(room){
         axisX: {
             title: "Time",
             titleFontColor:"#8B0000",
-            labelFontColor:"Crimson", 
+            titleFontSize:18,
+            labelFontColor:"Crimson",
+            labelFontSize: 15, 
         },
         axisY: {
             title: "cleaning round",
             titleFontColor:"#8B0000" ,
+            titleFontSize:18,
             labelFontColor:"Crimson",
+            labelFontSize: 15, 
         },
         data: [{    
             type:"spline",
