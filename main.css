@@ -214,21 +214,39 @@ span:nth-child(4) {
     height: 30px;
 }
 
-.chart{
-    margin: 0 auto;
+.chartback{
     position: relative;
-    width: 500px;
-    height: 400px;
+    margin: 0 auto;
+    width: 600px;
+    height: 500px;
     top: 378px;
     right: 20%;
-    
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50% 10% ;
     background: linear-gradient(to bottom left, #ff8737, #f9d423);
     box-shadow: 7px 8px 7px 1px rgb(0 0 0 / 50%);
     animation: rotate 7s linear infinite;
-    color: rgb(158, 141, 173);
+    
 }
 
-.chart:hover{
+
+.chartback:hover{
     box-shadow: 10px 11px 10px 4px rgb(0 0 0 / 100%);
+    
+}
+.chart{
+    margin: 0 auto;
+    
+    width: 500px;
+    height: 400px;
+    /* left:41px;
+    top:50px; */
+    
+    
+    
+    
     
 }
