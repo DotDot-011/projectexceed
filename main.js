@@ -113,11 +113,11 @@ function update_roomstatus()
         desti.innerText = room_status[room]['total_num'];
         if(room_status[room]['status'] === 'True')
         {
-            desti.style.backgroundColor = 'hsl(101, 61%, 50%)';
+            desti.style.background = "linear-gradient(to bottom left, #13f513, #f9d423)";
         }
         else
         {
-            desti.style.backgroundColor = 'red';
+            desti.style.backgroundColor = 'linear-gradient(to bottom left, #e9240a, #f9d423)';
         }
         var room_responsible = room+'_responsible';
         desti = document.getElementById(room_responsible);
@@ -150,7 +150,7 @@ function create_graph(room){
         data: [{    
             type:"spline",
             lineThickness: 5,
-            color:"Crimson",
+            lineColor: "crimson",
             markerColor: "purple",
             fillOpacity: .3, 
             indexLabelFontSize: 16,

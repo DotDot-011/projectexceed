@@ -58,17 +58,14 @@ footer{
     height: 276px;
     margin-top: 49px;
     background:linear-gradient(to bottom left, #13f513, #f9d423);
-    
     color: white;
     font-size: 68px;
     border: 1px  black;
     display: flex;
-
     justify-content: center;
     align-items: center;
     border-radius: 50% 10% ;
     box-shadow: 15px 0px 10px 10px rgba(0, 0,0, 0.5);
-
 }
 #room1_used:hover{
     
