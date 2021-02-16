@@ -158,6 +158,8 @@ form.addEventListener("submit", (event) => {
 
 console.log(data_graph);
 
+
+//สร้างกราฟ
 all_room.forEach((room) => {
      create_graph(room);
 });
@@ -169,6 +171,8 @@ setInterval(() => {
     // all_room.forEach((room) => {
     //     create_graph(room);
     // });
+    
+    //update graph
     all_room.forEach((room) => {
         for(var j = 0;j< 7;j++)
         {
