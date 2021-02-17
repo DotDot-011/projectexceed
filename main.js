@@ -2,12 +2,15 @@ var all_room = ['room1'];
 
 var room_status = {
     room1: {
+        mode : 1,
         name: 'Room 1',
         status: 'True',
         total_num: '0',
+        real_time_num: '15',
         responsible: 'None',
     },
     room2: {
+        mode : 1,
         name: 'room2',
         status: 'True',
         total_num: '0',
@@ -110,7 +113,15 @@ function update_roomstatus()
         var room_use = room+'_used';
         // console.log(room_use);
         desti = document.getElementById(room_use);
-        desti.innerText = room_status[room]['total_num'];
+        if (room_status[room]['mode'] == 1)
+        {
+            desti.innerText = room_status[room]['total_num'];
+        }
+        else
+        {
+            desti.innerText = room_status[room]['real_time_num'];
+        }
+        
         if(room_status[room]['status'] === 'True')
         {
             desti.style.background = "linear-gradient(to bottom left, #13f513, #f9d423)";
@@ -176,6 +187,9 @@ form.addEventListener("submit", (event) => {
 
 console.log(data_graph);
 
+function test(room) {
+    room_status[room]['mode']*=-1;
+}
 
 //สร้างกราฟ
 all_room.forEach((room) => {
