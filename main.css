@@ -247,6 +247,20 @@ span:nth-child(4) {
 
 }
 
+.noti{
+    margin-top: 20px;
+}
+
+#edit{
+    width: 100px;
+    margin-top: 10px;
+}
+
+#graph{
+    width: 120px;
+    margin-top: 10px;
+}
+
 .sendbox:hover{
     background-color: rgb(177, 59, 4);
     cursor: pointer;
@@ -280,6 +294,7 @@ span:nth-child(4) {
     transform: translateY(-10px);
     
 }
+
 .chart{
     margin: 0 auto;
     width: 497px;

@@ -28,6 +28,7 @@
                     </div>
                     <div class = 'room1' id = 'room1_used' onclick="test('room1')" ></div>
                     <div class = 'room1' id = 'room1_responsible'></div>  
+                    <button class="sendbox" class = "noti" id="notify_room1" onclick="sendNoti('room1')">Notify</button>
                 </div>
                 
             </div>
@@ -37,6 +38,10 @@
                 <label for="frequency">ต้องการให้ทำความสะอาด (ทุกกี่คน)</label>
                 <input class="typingbox" type="text" name = 'frequency' id = 'frequency'>
                 <input class="sendbox" type="submit" id= 'submit'  value="Submit">
+                <br>
+                <button class="sendbox" id="edit" onclick="toJanitor()">Edit Janitor</button>
+                <button class="sendbox" id="graph" onclick="toGraph()">Show Graph</button>
+                
             </form>
             <div class="chartback">
                 <div class = 'chart' id = 'room1_chart'></div> 
