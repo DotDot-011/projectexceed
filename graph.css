@@ -1,0 +1,26 @@
+.button{
+    width: 71px;
+    height: 30px;
+    position: relative;
+    bottom: 2px;
+    background-color: rgb(235, 94, 13);
+    box-shadow: 0 8px rgb(0, 0, 0);
+    border:2px white;
+    font-size: 19px;
+    border-radius: 3px;
+    color: white;
+}
+
+.button:hover{
+    background-color: rgb(177, 59, 4);
+    cursor: pointer;
+    height: 30px;
+}
+
+.chart{
+    /* margin: 0 auto; */
+    width: 400px;
+    height: 300px;
+    /* left:41px;
+    top:50px; */
+}

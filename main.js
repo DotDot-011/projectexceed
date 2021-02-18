@@ -59,7 +59,13 @@ function easy_up(x)
     });
 }
 
-
+function sendNoti(room){
+    fetch("",{
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ janitor: room_status[room]["responsible"]})
+    }).then(response => {console.log(response)});
+}
 
 function get_room_detail() {
     fetch("https://exceed1.cpsk-club.xyz", {
@@ -176,6 +182,13 @@ function create_graph(room){
     chart[room].render();
 }
 
+function toJanitor(){
+    window.location = "./janitor.html";
+}
+
+function toGraph(){
+    window.location = "./graph.html";
+}
 
 const form = document.getElementById('input');
 form.addEventListener("submit", (event) => {
