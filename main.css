@@ -30,32 +30,45 @@ body{
 }
 
 .container{
-    background: linear-gradient(to bottom left,#c6a9a3,rgb(235, 229, 152));
+    background: linear-gradient(to bottom left,#F2E9E4,#C9ADA7);
     width: 100%;
     height: 1150px;
-    text-align: center;
-    
+    /* text-align: center; */
 }
 
 
 header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100px;
-    background-color: rgb(203, 255, 125);
-    color: white;
+    background-color: #22223B;
+    color: whitesmoke;
 }
+
+header h1{
+    font-size: 3rem;
+}
+
+.ALL{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 section{
     margin-top: 4%;
     margin-left: 3%;
     position: relative;
     border:5px rgb(0, 0, 0);
     width: 42%;
-    height: 1000px;
+    height: 800px;
     float: left;
-    box-shadow: 19px -8px 9px 4px rgb(0 0 0 / 50%);
-    background-color: #ebd8b7;
-    border-radius: 5px;
-    
+    /* box-shadow: 19px -8px 9px 4px rgb(0 0 0 / 50%); */
+    background-color: #4A4E69;
+    border-radius: 80px;
+    text-align: center;
 }
 section:hover{
     transform: translateY(-3px);
@@ -65,13 +78,13 @@ aside{
     margin-right: 3%;
     margin-top: 4%;
     position: relative;
-    width: 50%;
-    height: 1000px;
+    width: 48%;
+    height: 800px;
     float: right;
-    background-color: #9a8194;
-    box-shadow: 19px -8px 9px 4px rgb(0 0 0 / 50%);
+    background-color: #4A4E69;
+    /* box-shadow: 19px -8px 9px 4px rgb(0 0 0 / 50%); */
     text-align: center;
-    border-radius: 5px;
+    border-radius: 80px;
 }
 
 aside:hover{
@@ -100,7 +113,7 @@ footer{
     width: 304px;
     height: 276px;
     margin-top: 49px;
-    background:linear-gradient(to bottom left, #13f513, #f9d423);
+    background:linear-gradient(to bottom left, #184d47, #96bb7c);
     color: white;
     font-size: 68px;
     border: 1px  black;
@@ -123,7 +136,7 @@ footer{
     width: 260px;
     height: 50px;
     top:139px;
-    background-color: rgb(44, 44, 44,0.7);
+    background-color: #9A8C98;
     box-shadow: 9px -5px 5px 3px rgb(0 0 0 / 50%);
     color: white;
     font-size: 20px;
@@ -239,13 +252,13 @@ span:nth-child(4) {
     height: 30px;
     position: relative;
     bottom: 2px;
-    background-color: #c6a9a3;
+    background-color: #C9ADA7;
     box-shadow: 0 8px rgb(0, 0, 0);
     border:2px white;
     font-size: 19px;
     border-radius: 3px;
     color: white;
-
+    text-align: center;
 }
 
 #notify_room1{
@@ -302,4 +315,12 @@ span:nth-child(4) {
     height: 340px;
     /* left:41px;
     top:50px; */
+}
+
+.toiletpic{
+    margin: 0 auto;
+    padding-top: 100px;
+    width: 60%;
+    height: 60%;
+    display: block;
 }

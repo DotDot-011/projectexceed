@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="./main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="container">
-        <!-- <header>
-            header
-        </header> -->
+        <header>
+            <h1>SMART TOILET</h1>
+        </header>
+        <div class="ALL">
         <section>
             <div class = 'room'>
                 <div class = 'room1' >
@@ -34,19 +36,21 @@
             </div>
         </section>
         <aside>
+            <img src="https://www.flaticon.com/svg/vstatic/svg/2796/2796711.svg?token=exp=1613755037~hmac=072b0097d202b60453551b4375accc8e" class="toiletpic">
             <form id = 'input'>
                 <label for="frequency">ต้องการให้ทำความสะอาด (ทุกกี่คน)</label>
                 <input class="typingbox" type="text" name = 'frequency' id = 'frequency'>
                 <input class="sendbox" type="submit" id= 'submit'  value="Submit">
                 <br>
-                <button class="sendbox" id="edit" onclick="toJanitor()">Edit Janitor</button>
-                <button class="sendbox" id="graph" onclick="toGraph()">Show Graph</button>
+                <button class="sendbox" id="edit" onclick="toJanitor()">Janitor</button>
+                <button class="sendbox" id="graph" onclick="toGraph()">Graph</button>
                 
             </form>
             <!-- <div class="chartback">
                 <div class = 'chart' id = 'room1_chart'></div>  -->
         </div>
         </aside>
+        </div>
         <div class="clearfix"></div>
 
         <!-- <footer>

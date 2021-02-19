@@ -131,11 +131,11 @@ function update_roomstatus()
         
         if(room_status[room]['status'] === 'True')
         {
-            desti.style.background = "linear-gradient(to bottom left, #13f513, #f9d423)";
+            desti.style.background = "linear-gradient(to bottom left, #184d47, #96bb7c)";
         }
         else
         {
-            desti.style.backgroundColor = 'linear-gradient(to bottom left, #e9240a, #f9d423)';
+            desti.style.backgroundColor = 'linear-gradient(to bottom left, #df7861, #ecb390)';
         }
         var room_responsible = room+'_responsible';
         desti = document.getElementById(room_responsible);
