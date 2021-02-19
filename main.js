@@ -70,7 +70,8 @@ function sendNoti(room){
     }).then(response => {console.log(response)});
 }
 
-function get_room_detail() {
+function get_room_detail() 
+{
     fetch(route+"room/status", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
@@ -78,23 +79,23 @@ function get_room_detail() {
     }).then((response) => response.json())
     .then((datas) => {
         Object.keys(datas).forEach((data) => {
-            room_statu['room1'][data] = datas[data];
+            room_status['room1'][data] = datas[data];
         });
     });
 }
 
 function get_room_graph() {
-    fetch("https://exceed1.cpsk-club.xyz", {
+    fetch(route+"grap", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
 
     }).then((response) => response.json())
     .then((datas) => {
         Object.keys(datas).forEach((room) => {
-            data_graph[room] = [];
             var i = 0;
             Object.keys(datas[room]).forEach((time) =>{
-                data_graph[room][i]['y'] = datas[room][time];
+                console.log(data_graph[room]);
+                data_graph[room][i]['y'] = parseInt(datas[room][time]);
                 i+=1;
             })
         });
@@ -102,10 +103,10 @@ function get_room_graph() {
 }
 
 function give_input(x){
-    fetch(route+"",{
+    fetch(route+"addfrq",{
         method: 'PATCH',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ frequent: x}),
+        body: JSON.stringify({ frequent: parseInt(x)}),
     }).then((response) => console.log(response));
 }
 
@@ -194,8 +195,8 @@ const form = document.getElementById('input');
 form.addEventListener("submit", (event) => {
         event.preventDefault();
         var x = form.elements["frequency"].value;
-        console.log(x);
-        // give_input(x);
+        // console.log(x);
+        give_input(x);
 });
 
 console.log(data_graph);
@@ -206,13 +207,15 @@ function test(room) {
 
 //สร้างกราฟ
 all_room.forEach((room) => {
-     create_graph(room);
+    create_graph(room);
 });
 
+
+
 setInterval(() => {
-    // get_room_detail();
+    get_room_detail();
     // give_input();
-    // get_room_graph();
+    get_room_graph();
     // all_room.forEach((room) => {
     //     create_graph(room);
     // });

@@ -4,6 +4,10 @@ var chart={
     room1:"",
 };
 
+var room_status = {
+    room1: {name: "none"}
+}
+
 var data_graph={
     room1:[
         {x: 9,y: 0},
@@ -18,20 +22,37 @@ var data_graph={
 
 var route="http://158.108.182.1:2255/";
 
-function get_room_graph() {
-    fetch(route, {
+
+function get_room_detail() {
+    fetch(route+"room/status", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
 
     }).then((response) => response.json())
     .then((datas) => {
-        var i = 0;
-        Object.keys(datas).forEach((time) => {
-                data_graph['room1'][i]['y'] = int(datas[time]);
-                i+=1;
-            });
-        });
+        room_status['room1']['name'] = datas['name'];
+    });
 }
+
+
+function get_room_graph() {
+    fetch(route+"grap", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+
+    }).then((response) => response.json())
+    .then((datas) => {
+        Object.keys(datas).forEach((room) => {
+            var i = 0;
+            Object.keys(datas[room]).forEach((time) =>{
+                // console.log(data_graph[room]);
+                data_graph[room][i]['y'] = parseInt(datas[room][time]);
+                i+=1;
+            })
+        });
+    });
+}
+
 
 function create_graph(room){
     chart[room] = new CanvasJS.Chart('chart_'+room, {

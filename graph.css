@@ -51,13 +51,16 @@ section:hover{
     
 }
 
+
+
 .button{
+    /* margin-top: 10px; */
     width: 70px;
     height: 60px;
     bottom: 8px;
     top: 10px;
     background-color: #99bbad;
-    box-shadow: 0 8px rgb(0, 0, 0);
+    box-shadow: 3px 5px rgb(0,0,0);
     border:2px white;
     font-size: 24px;
     border-radius: 3px;
@@ -67,7 +70,13 @@ section:hover{
 .button:hover{
     background-color:  #689e88;
     cursor: pointer;
-    height: 70px;
+    /* height: 70px; */
+}
+
+
+.button:active{
+    transform: translateY(4px);
+    box-shadow: 0 5px rgb(7, 7, 7);
 }
 
 .chart{

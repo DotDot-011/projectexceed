@@ -1,3 +1,5 @@
+const route="http://158.108.182.1:2255/";
+
 function addRow(name, start, end) {
     const janitorTable = document.getElementById("janitor-table");
     const newRow = document.createElement("tr");
@@ -18,22 +20,36 @@ function addDataToRow(data, row) {
     row.append(td);
 }
 
-function fetchJanitors() {
-    const janitors = [{
-            name: "Pensri",
-            start: 9,
-            end: 20,
-        },
-        {
-            name: "Siwat",
-            start: 9,
-            end: 10,
-        },
-    ];
+function sendfetch(data){
+    fetch(route+"janitor/create",{
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: data,
+    }).then(response => console.log(response));
+}
 
-    janitors.forEach((janitor) => {
-        addRow(janitor.name, janitor.start, janitor.end);
-    });
+function fetchJanitors() {
+    const janitors = [];
+
+    fetch(route+"alljan",
+        {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+        }).then(response => response.json()).then((loads) => {
+            loads['data'].forEach(load=>{
+                janitors.push(load);  
+                console.log(janitors);        
+            });
+        }).then(x => {
+            // console.log(janitors);
+            janitors.forEach((janitor) => {
+                // console.log(janitor.name);
+                // console.log(janitor.start);
+                // console.log(janitor.end);
+                addRow(janitor.name, janitor.start, janitor.end);
+            });
+        });
+
 }
 
 function add() {
@@ -60,11 +76,18 @@ function updateJanitorData() {
         if (name && start && end) janitorData.push(janitor);
     });
 
-    const payload = JSON.stringify({ data: janitorData });
-
+    const payload = JSON.stringify({ janitor: "z",data: janitorData });
+    sendfetch(payload);
     console.log(payload);
 }
 
 window.onload = function() {
     fetchJanitors();
 };
+
+
+// {
+//     data: {
+//     {"name":"Pensri","start":"9","end":"20"},
+//     {"name":"Siwat","start":"9","end":"10"}}
+// }
