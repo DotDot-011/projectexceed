@@ -84,23 +84,23 @@ function get_room_detail()
     });
 }
 
-function get_room_graph() {
-    fetch(route+"grap", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
+// function get_room_graph() {
+//     fetch(route+"grap", {
+//         method: "GET",
+//         headers: { "Content-Type": "application/json" },
 
-    }).then((response) => response.json())
-    .then((datas) => {
-        Object.keys(datas).forEach((room) => {
-            var i = 0;
-            Object.keys(datas[room]).forEach((time) =>{
-                console.log(data_graph[room]);
-                data_graph[room][i]['y'] = parseInt(datas[room][time]);
-                i+=1;
-            })
-        });
-    });
-}
+//     }).then((response) => response.json())
+//     .then((datas) => {
+//         Object.keys(datas).forEach((room) => {
+//             var i = 0;
+//             Object.keys(datas[room]).forEach((time) =>{
+//                 console.log(data_graph[room]);
+//                 data_graph[room][i]['y'] = parseInt(datas[room][time]);
+//                 i+=1;
+//             })
+//         });
+//     });
+// }
 
 function give_input(x){
     fetch(route+"addfrq",{
@@ -145,43 +145,43 @@ function update_roomstatus()
 
 
 
-function create_graph(room){
-    chart[room] = new CanvasJS.Chart(room+'_chart', {
-        backgroundColor:"transparent",
-        animationEnabled: true,
-        animationDuration:1000,
-        title:{
-            text: "Average Cleaning",
-            fontSize: 25,
-            fontColor: "Crimson",
-        },
-        axisX: {
-            title: "Time",
-            titleFontColor:"#8B0000",
-            titleFontSize:18,
-            labelFontColor:"Crimson",
-            labelFontSize: 15, 
-        },
-        axisY: {
-            title: "cleaning round",
-            titleFontColor:"#8B0000" ,
-            titleFontSize:18,
-            labelFontColor:"Crimson",
-            labelFontSize: 15, 
-        },
-        data: [{    
-            type:"spline",
-            lineThickness: 5,
-            lineColor: "crimson",
-            markerColor: "purple",
-            fillOpacity: .3, 
-            indexLabelFontSize: 16,
-            dataPoints: data_graph[room],
+// function create_graph(room){
+//     chart[room] = new CanvasJS.Chart(room+'_chart', {
+//         backgroundColor:"transparent",
+//         animationEnabled: true,
+//         animationDuration:1000,
+//         title:{
+//             text: "Average Cleaning",
+//             fontSize: 25,
+//             fontColor: "Crimson",
+//         },
+//         axisX: {
+//             title: "Time",
+//             titleFontColor:"#8B0000",
+//             titleFontSize:18,
+//             labelFontColor:"Crimson",
+//             labelFontSize: 15, 
+//         },
+//         axisY: {
+//             title: "cleaning round",
+//             titleFontColor:"#8B0000" ,
+//             titleFontSize:18,
+//             labelFontColor:"Crimson",
+//             labelFontSize: 15, 
+//         },
+//         data: [{    
+//             type:"spline",
+//             lineThickness: 5,
+//             lineColor: "crimson",
+//             markerColor: "purple",
+//             fillOpacity: .3, 
+//             indexLabelFontSize: 16,
+//             dataPoints: data_graph[room],
         
-        }]
-    });
-    chart[room].render();
-}
+//         }]
+//     });
+//     chart[room].render();
+// }
 
 function toJanitor(){
     window.location = "./janitor.html";
@@ -205,10 +205,10 @@ function test(room) {
     room_status[room]['mode']*=-1;
 }
 
-//สร้างกราฟ
-all_room.forEach((room) => {
-    create_graph(room);
-});
+// //สร้างกราฟ
+// all_room.forEach((room) => {
+//     create_graph(room);
+// });
 
 
 
@@ -221,13 +221,13 @@ setInterval(() => {
     // });
     
     //update graph
-    all_room.forEach((room) => {
-        for(var j = 0;j< 7;j++)
-        {
-            chart[room].options.data[0].dataPoints[j].y = data_graph[room][j]['y'];
-        }
-        chart[room].render();
-    });
+    // all_room.forEach((room) => {
+    //     for(var j = 0;j< 7;j++)
+    //     {
+    //         chart[room].options.data[0].dataPoints[j].y = data_graph[room][j]['y'];
+    //     }
+    //     chart[room].render();
+    // });
     update_roomstatus();
 },1000);
 
