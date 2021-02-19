@@ -213,9 +213,9 @@ function test(room) {
 
 
 setInterval(() => {
-    get_room_detail();
+    //get_room_detail();
     // give_input();
-    get_room_graph();
+    //get_room_graph();
     // all_room.forEach((room) => {
     //     create_graph(room);
     // });
