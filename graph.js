@@ -25,19 +25,17 @@ function get_room_graph() {
 
     }).then((response) => response.json())
     .then((datas) => {
-        Object.keys(datas).forEach((room) => {
-            var i = 0;
-            Object.keys(datas[room]).forEach((time) =>{
-                data_graph[room][i]['y'] = datas[room][time];
+        var i = 0;
+        Object.keys(datas).forEach((time) => {
+                data_graph['room1'][i]['y'] = int(datas[time]);
                 i+=1;
-            })
+            });
         });
-    });
 }
 
 function create_graph(room){
     chart[room] = new CanvasJS.Chart('chart_'+room, {
-        backgroundColor:"transparent",
+        // backgroundColor:"transparent",
         animationEnabled: true,
         animationDuration:1000,
         title:{

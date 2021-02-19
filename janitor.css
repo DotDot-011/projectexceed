@@ -1,5 +1,48 @@
-    table {
+body{
+    background: linear-gradient(to bottom left,#ebd8b7,rgb(235, 229, 152));
+    width: 100%;
+    height: 1150px;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: inherit;
+}
+
+h2{
+    font-size: 48px;
+    color: #9a8194;
+}
+
+#update{
+    width: 250px;
+    margin-right: 20px;
+}
+
+.button{
+    width: 71px;
+    height: 30px;
+    bottom: 3px;
+    background-color: #99bbad;
+    box-shadow: 0 4px rgb(0, 0, 0);
+    border:2px white;
+    font-size: 24px;
+    border-radius: 3px;
+    color: white;
+    margin-top: 10px;
+}
+
+.button:hover{
+    background-color: #689e88;
+    cursor: pointer;
+    height: 30px;
+
+}
+
+
+
+table {
+    border-radius: 20px;
         width: 100%;
+        background-color: white;
     }
     
     table,
@@ -7,6 +50,7 @@
     td {
         border: 1px solid black;
         border-collapse: collapse;
+        /* border-radius: 20px; */
     }
     
     th,
@@ -27,3 +71,24 @@
         background-color: black;
         color: white;
     }
+
+    section{
+        margin-top: 4%;
+        /* margin-left: 3%; */
+        position: relative;
+        border:5px rgb(0, 0, 0);
+        width: 80%;
+        height: 1000px;
+        left: 100px;
+        float: left;
+        box-shadow: 19px -8px 9px 4px rgb(0 0 0 / 50%);
+        background-color: #c6a9a3;
+        border-radius: 5px;
+        text-align: center;    
+    }
+    
+    section:hover{
+        transform: translateY(-3px);
+    }
+    
+    

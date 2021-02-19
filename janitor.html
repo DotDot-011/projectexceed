@@ -10,7 +10,11 @@
 </head>
 
 <body>
-    <h1>Janitors</h1>
+    <h1>
+        <button class = "button" id = "main" onclick="location.href='./main.html'">Main </button>
+    </h1>
+    <section>
+    <h2>Janitors</h2>
     <table id="janitor-table">
         <tr>
             <th>
@@ -25,9 +29,11 @@
             </thead>
         </tr>
     </table>
-    <button onclick="updateJanitorData()">Update Janitor Info</button>
-    <button onclick="add()">Add</button>
+    <button class="button" id="update" onclick="updateJanitorData()">Update Janitor Info</button>
+    <button class="button" onclick="add()">Add</button>
+    </section>
 
+</body>
 </html>
 
 <script src="./janitor.js"></script>

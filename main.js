@@ -1,5 +1,8 @@
 var all_room = ['room1'];
 
+var route="http://158.108.182.1:2255/";
+
+
 var room_status = {
     room1: {
         mode : 1,
@@ -68,17 +71,14 @@ function sendNoti(room){
 }
 
 function get_room_detail() {
-    fetch("https://exceed1.cpsk-club.xyz", {
+    fetch(route+"room/status", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
 
     }).then((response) => response.json())
     .then((datas) => {
         Object.keys(datas).forEach((data) => {
-            Object.keys(datas[data]).forEach((detail) =>
-            {
-                room_status[data][detail] = datas[data][detail];
-            });
+            room_statu['room1'][data] = datas[data];
         });
     });
 }
@@ -102,10 +102,10 @@ function get_room_graph() {
 }
 
 function give_input(x){
-    fetch('https://exceed1.cpsk-club.xyz',{
-        method: 'POST',
+    fetch(route+"",{
+        method: 'PATCH',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ frequency: x}),
+        body: JSON.stringify({ frequent: x}),
     }).then((response) => console.log(response));
 }
 
