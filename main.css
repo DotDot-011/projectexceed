@@ -248,9 +248,11 @@ span:nth-child(4) {
 }
 
 .sendbox{
-    width: 71px;
-    height: 30px;
+    margin: 0 auto;
+    width: 15%;
+    height: 100%;
     position: relative;
+    top: 2px;
     bottom: 2px;
     background-color: #C9ADA7;
     box-shadow: 0 8px rgb(0, 0, 0);
@@ -278,7 +280,7 @@ span:nth-child(4) {
 .sendbox:hover{
     background-color: #be8276;
     cursor: pointer;
-    height: 30px;
+    height: 120%;
 }
 
 .sendbox:active{
@@ -323,4 +325,10 @@ span:nth-child(4) {
     width: 60%;
     height: 60%;
     display: block;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;
+    align-self: center;
 }
