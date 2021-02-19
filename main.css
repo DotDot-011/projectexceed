@@ -152,8 +152,7 @@ footer{
   
 #room1_responsible:hover{
     background-color: rgb(16, 17, 16,0.2);
-    width: 280px;
-    height: 60px;
+    transform: translateY(-8px);
 }
 
 
