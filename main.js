@@ -1,87 +1,86 @@
-var all_room = ['room1'];
+let all_room = ["room1"];
 
-var route="http://158.108.182.1:2255/";
+let route = "http://158.108.182.1:2255/";
 
-
-var room_status = {
+let room_status = {
     room1: {
-        mode : 1,
-        name: 'Room 1',
-        status: 'True',
-        total_num: '0',
-        real_time_num: '15',
-        responsible: 'None',
+        mode: 1,
+        name: "Room 1",
+        status: "True",
+        total_num: "0",
+        real_time_num: "15",
+        responsible: "None",
     },
     room2: {
-        mode : 1,
-        name: 'room2',
-        status: 'True',
-        total_num: '0',
-        responsible: 'None',
-    }
+        mode: 1,
+        name: "room2",
+        status: "True",
+        total_num: "0",
+        responsible: "None",
+    },
 };
 
-var data_graph = {
+let data_graph = {
     room1: [
-        {x : 9, y: 5},
-        {x : 11, y: 3},
-        {x : 13, y: 4},
-        {x : 15, y: 3},
-        {x : 17, y: 6},
-        {x : 19, y: 5},
-        {x : 21, y: 2},
+        { x: 9, y: 5 },
+        { x: 11, y: 3 },
+        { x: 13, y: 4 },
+        { x: 15, y: 3 },
+        { x: 17, y: 6 },
+        { x: 19, y: 5 },
+        { x: 21, y: 2 },
     ],
-}
+};
 
-var temp = {
+let temp = {
     room1: {
-        time_9 : 9,
-        time_11 : 10,
-        time_13 : 13,
-        time_15 : 15,
-        time_17 : 17,
-        time_19 : 19,
-        time_21 : 20,
-    }
+        time_9: 9,
+        time_11: 10,
+        time_13: 13,
+        time_15: 15,
+        time_17: 17,
+        time_19: 19,
+        time_21: 20,
+    },
 };
 
-var chart = {
-    room1 : "",
+let chart = {
+    room1: "",
 };
 
-function easy_up(x)
-{
+function easy_up(x) {
     Object.keys(temp).forEach((room) => {
         // console.log(temp[room]);
-        var i = 0;
+        let i = 0;
         Object.keys(temp[room]).forEach((time) => {
-            data_graph[room][i]['y'] = temp[room][time]+x;
+            data_graph[room][i]["y"] = temp[room][time] + x;
             // console.log(time);
-            i+=1;
+            i += 1;
         });
     });
 }
 
-function sendNoti(room){
-    fetch("",{
+function sendNoti(room) {
+    fetch("", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ janitor: room_status[room]["responsible"]})
-    }).then(response => {console.log(response)});
+        body: JSON.stringify({ janitor: room_status[room]["responsible"] }),
+    }).then((response) => {
+        console.log(response);
+    });
 }
 
-function get_room_detail() 
-{
-    fetch(route+"room/status", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-
-    }).then((response) => response.json())
-    .then((datas) => {
-        Object.keys(datas).forEach((data) => {
-            room_status['room1'][data] = datas[data];
+function get_room_detail() {
+    fetch(route + "room/status", {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+        })
+        .then((response) => response.json())
+        .then((datas) => {
+            Object.keys(datas).forEach((data) => {
+                room_status["room1"][data] = datas[data];
+            });
         });
-    });
 }
 
 // function get_room_graph() {
@@ -92,7 +91,7 @@ function get_room_detail()
 //     }).then((response) => response.json())
 //     .then((datas) => {
 //         Object.keys(datas).forEach((room) => {
-//             var i = 0;
+//             let i = 0;
 //             Object.keys(datas[room]).forEach((time) =>{
 //                 console.log(data_graph[room]);
 //                 data_graph[room][i]['y'] = parseInt(datas[room][time]);
@@ -102,48 +101,41 @@ function get_room_detail()
 //     });
 // }
 
-function give_input(x){
-    fetch(route+"addfrq",{
-        method: 'PATCH',
+function give_input(x) {
+    fetch(route + "addfrq", {
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ frequent: parseInt(x)}),
+        body: JSON.stringify({ frequent: parseInt(x) }),
     }).then((response) => console.log(response));
 }
 
-function update_roomstatus()
-{
+function update_roomstatus() {
     all_room.forEach((room) => {
-        var room_name = room+'_number';
-        var desti = document.getElementById(room_name);
-        desti.innerText = room_status[room]['name'];
+        let room_name = room + "_number";
+        let desti = document.getElementById(room_name);
+        desti.innerText = room_status[room]["name"];
 
-        var room_use = room+'_used';
+        let room_use = room + "_used";
         // console.log(room_use);
         desti = document.getElementById(room_use);
-        if (room_status[room]['mode'] == 1)
-        {
-            desti.innerText = room_status[room]['total_num'];
+        if (room_status[room]["mode"] == 1) {
+            desti.innerText = room_status[room]["total_num"];
+        } else {
+            desti.innerText = room_status[room]["real_time_num"];
         }
-        else
-        {
-            desti.innerText = room_status[room]['real_time_num'];
+
+        if (room_status[room]["status"] === "True") {
+            desti.style.background =
+                "linear-gradient(to bottom left, #184d47, #96bb7c)";
+        } else {
+            desti.style.background =
+                "linear-gradient(to bottom left, #df7861, #ecb390)";
         }
-        
-        if(room_status[room]['status'] === 'True')
-        {
-            desti.style.background = "linear-gradient(to bottom left, #184d47, #96bb7c)";
-        }
-        else
-        {
-            desti.style.background = 'linear-gradient(to bottom left, #df7861, #ecb390)';
-        }
-        var room_responsible = room+'_responsible';
+        let room_responsible = room + "_responsible";
         desti = document.getElementById(room_responsible);
-        desti.innerText = room_status[room]['responsible'];
-    })
+        desti.innerText = room_status[room]["responsible"];
+    });
 }
-
-
 
 // function create_graph(room){
 //     chart[room] = new CanvasJS.Chart(room+'_chart', {
@@ -160,57 +152,61 @@ function update_roomstatus()
 //             titleFontColor:"#8B0000",
 //             titleFontSize:18,
 //             labelFontColor:"Crimson",
-//             labelFontSize: 15, 
+//             labelFontSize: 15,
 //         },
 //         axisY: {
 //             title: "cleaning round",
 //             titleFontColor:"#8B0000" ,
 //             titleFontSize:18,
 //             labelFontColor:"Crimson",
-//             labelFontSize: 15, 
+//             labelFontSize: 15,
 //         },
-//         data: [{    
+//         data: [{
 //             type:"spline",
 //             lineThickness: 5,
 //             lineColor: "crimson",
 //             markerColor: "purple",
-//             fillOpacity: .3, 
+//             fillOpacity: .3,
 //             indexLabelFontSize: 16,
 //             dataPoints: data_graph[room],
-        
+
 //         }]
 //     });
 //     chart[room].render();
 // }
 
-function toJanitor(){
+function toJanitor() {
     window.location = "./janitor.html";
 }
 
-function toGraph(){
+function toGraph() {
     window.location = "./graph.html";
 }
 
-const form = document.getElementById('input');
-form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        var x = form.elements["frequency"].value;
-        // console.log(x);
-        give_input(x);
+const submitButton = document.getElementById("submit");
+submitButton.addEventListener("click", (event) => {
+    const frequency = document.getElementById("frequency");
+    event.preventDefault();
+
+    let frequencyValue = frequency.value;
+    if (frequencyValue == "" || frequencyValue == null) {
+        alert("Please input a number");
+    }
+    return;
+    // console.log(frequencyValue);
+    give_input(frequencyValue);
 });
 
 console.log(data_graph);
 
 function test(room) {
-    room_status[room]['mode']*=-1;
+    room_status[room]["mode"] *= -1;
 }
 
 // //สร้างกราฟ
 // all_room.forEach((room) => {
 //     create_graph(room);
 // });
-
-
 
 setInterval(() => {
     //get_room_detail();
@@ -219,15 +215,14 @@ setInterval(() => {
     // all_room.forEach((room) => {
     //     create_graph(room);
     // });
-    
+
     //update graph
     // all_room.forEach((room) => {
-    //     for(var j = 0;j< 7;j++)
+    //     for(let j = 0;j< 7;j++)
     //     {
     //         chart[room].options.data[0].dataPoints[j].y = data_graph[room][j]['y'];
     //     }
     //     chart[room].render();
     // });
     update_roomstatus();
-},1000);
-
+}, 1000);

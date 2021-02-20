@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,56 +11,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
     <div class="container">
         <header>
             <h1>SMART TOILET</h1>
         </header>
         <div class="ALL">
-        <section>
-            <div class = 'room'>
-                <div class = 'room1' >
-                    
-                    <div class="outer-circle">
-                        <div class="inner-circle">  </div>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <div class = 'room1' id = 'room1_number' ></div>
+            <section>
+                <div class='room'>
+                    <div class='room1'>
+
+                        <div class="outer-circle">
+                            <div class="inner-circle"> </div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div class='room1' id='room1_number'></div>
+                        </div>
+                        <div class='room1' id='room1_used' onclick="test('room1')"></div>
+                        <div class='room1' id='room1_responsible'></div>
+                        <button class="sendbox" id="notify_room1" onclick="sendNoti('room1')">Notify</button>
                     </div>
-                    <div class = 'room1' id = 'room1_used' onclick="test('room1')" ></div>
-                    <div class = 'room1' id = 'room1_responsible'></div>  
-                    <button class="sendbox" id="notify_room1" onclick="sendNoti('room1')">Notify</button>
+
                 </div>
-                
-            </div>
-        </section>
-        <aside>
-            <img src="./PIC/toilet (1).png" class="toiletpic">
-            <form id = 'input'>
-                <label for="frequency">ต้องการให้ทำความสะอาด (ทุกกี่คน)</label>
-                <input class="typingbox" type="text" name = 'frequency' id = 'frequency'>
-                <input class="sendbox" type="submit" id= 'submit'  value="Submit">
-                <br>
-                <button class="box" id="edit" onclick="toJanitor()">
-                    <img src="./PIC/household.png" class="icon"><br>
-                    Janitor
-                </button>
-                <button class="box" id="graph" onclick="toGraph()">
-                    <img src="./PIC/bar-chart.png" class="icon"><br>
-                    Graph
-                </button>
-                
-            </form>
-            <!-- <div class="chartback">
+            </section>
+            <aside>
+                <img src="./PIC/toilet (1).png" class="toiletpic">
+                <form id='input'>
+                    <label for="frequency">ต้องการให้ทำความสะอาด (ทุกกี่คน)</label>
+                    <input class="typingbox" type="text" name='frequency' id='frequency'>
+                    <input class="sendbox" type="submit" id='submit' value="Submit">
+                    <br>
+                    <div class="nav-container">
+                        <div class="box" id="edit" onclick="toJanitor()">
+                            <img src="./PIC/household.png" class="icon"><br> Janitor
+                        </div>
+                        <div class="box" id="graph" onclick="toGraph()">
+                            <img src="./PIC/bar-chart.png" class="icon"><br> Graph
+                        </div>
+                    </div>
+
+                </form>
+                <!-- <div class="chartback">
                 <div class = 'chart' id = 'room1_chart'></div>  -->
         </div>
         </aside>
-        </div>
-        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
 
-        <!-- <footer>
+    <!-- <footer>
             footer
         </footer> -->
     </div>
