@@ -61,8 +61,8 @@ function easy_up(x) {
 }
 
 function sendNoti(rm) {
-    fetch("", {
-        method: "POST",
+    fetch(route+"/notify_re", {
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             room: "test",
