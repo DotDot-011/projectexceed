@@ -363,3 +363,7 @@ span:nth-child(4) {
     justify-content: center;
     margin: 16px 0 0 0;
 }
+
+.card {
+    box-shadow: #22223b 5px 5px, #4a4e69 10px 10px, #9a8c98 15px 15px, #c9ada7 20px 20px, #C9ADA7 23px 23px;
+}
