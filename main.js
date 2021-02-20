@@ -135,7 +135,7 @@ function update_roomstatus()
         }
         else
         {
-            desti.style.backgroundColor = 'linear-gradient(to bottom left, #df7861, #ecb390)';
+            desti.style.background = 'linear-gradient(to bottom left, #df7861, #ecb390)';
         }
         var room_responsible = room+'_responsible';
         desti = document.getElementById(room_responsible);
