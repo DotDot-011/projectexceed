@@ -138,6 +138,10 @@ footer {
     transform: translateY(-10px);
 }
 
+#room1_used:active{
+    transform: translateY(4px);
+}
+
 #room1_responsible {
     width: 260px;
     height: 50px;
