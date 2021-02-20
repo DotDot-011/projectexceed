@@ -106,7 +106,7 @@ function give_input(x) {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ frequent: parseInt(x) }),
-    }).then((response) => console.log(response));
+    }).then((response) => console.log(response)).then(jj=>{console.log("success");});
 }
 
 function update_roomstatus() {
@@ -191,8 +191,9 @@ submitButton.addEventListener("click", (event) => {
     let frequencyValue = frequency.value;
     if (frequencyValue == "" || frequencyValue == null) {
         alert("Please input a number");
+        return;
     }
-    return;
+    
     // console.log(frequencyValue);
     give_input(frequencyValue);
 });
@@ -209,7 +210,7 @@ function test(room) {
 // });
 
 setInterval(() => {
-    //get_room_detail();
+    get_room_detail();
     // give_input();
     //get_room_graph();
     // all_room.forEach((room) => {
