@@ -1,4 +1,4 @@
-const route="http://158.108.182.1:2255/";
+const route="https://exceed1.cpsk-club.xyz/";
 
 function addRow(name, start, end) {
     const janitorTable = document.getElementById("janitor-table");
