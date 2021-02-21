@@ -102,6 +102,7 @@ function get_room_detail() {
 // }
 
 function give_input(x) {
+    console.log("test");
     fetch(route + "addfrq", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
@@ -193,7 +194,6 @@ submitButton.addEventListener("click", (event) => {
         alert("Please input a number");
         return;
     }
-    
     // console.log(frequencyValue);
     give_input(frequencyValue);
 });
