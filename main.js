@@ -1,6 +1,6 @@
 let all_room = ["room1"];
 
-let route = "http://158.108.182.1:2255/";
+let route = "http://158.108.182.1:3000/";
 
 let room_status = {
     room1: {
