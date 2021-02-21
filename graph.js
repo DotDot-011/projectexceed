@@ -99,7 +99,7 @@ all_room.forEach((room) => {
 
 setInterval(()=>{
 
-    // get_room_graph();
+    get_room_graph();
 
     all_room.forEach((room) => {
         for(var j = 0;j< 7;j++)
