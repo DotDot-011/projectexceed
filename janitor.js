@@ -1,4 +1,4 @@
-const route="http://158.108.182.1:2255/";
+const route="http://158.108.182.1:3000/";
 
 function addRow(name, start, end) {
     const janitorTable = document.getElementById("janitor-table");

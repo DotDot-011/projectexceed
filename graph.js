@@ -20,7 +20,7 @@ var data_graph={
     ],
 };
 
-var route="http://158.108.182.1:2255/";
+var route="http://158.108.182.1:3000/";
 
 
 function get_room_detail() {
