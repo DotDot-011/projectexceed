@@ -60,11 +60,15 @@ function easy_up(x) {
     });
 }
 
-function sendNoti(room) {
-    fetch("", {
-        method: "POST",
+function sendNoti(rm) {
+    fetch(route+"/notify_re", {
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ janitor: room_status[room]["responsible"] }),
+        body: JSON.stringify({
+            room: "test",
+            name: room_status[rm]['responsible'],
+            room_name: room_status[rm]['name'],
+            }),
     }).then((response) => {
         console.log(response);
     });
